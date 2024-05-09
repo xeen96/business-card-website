@@ -1,0 +1,27 @@
+{% block home %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('styles', filename='home.css') }}">
+<div class="window-console"> 
+    <div class="container">
+        <div class="profile">
+            <h1>John Doe</h1>
+            <h2> Main Profession </h2>
+            <p>Beautiful is better than ugly.</p>
+            <p>Explicit is better than implicit.</p>
+            <p>Simple is better than complex.</p>
+            <p>Flat is better than nested.</p>
+            <p>Sparse is better than dense.</p>
+            <a href="{{ url_for('download_cv') }}">
+                <button>
+                    <span class="text">Download CV</span>
+                    <span class="shimmer"></span>
+                </button>
+            </a>
+        </div>
+        <div class="social-buttons">
+            <a href="#" class="social-button">Telegram</a>
+            <a href="#" class="social-button">LinkedIn</a>
+            <a href="#" class="social-button">Git Hub</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

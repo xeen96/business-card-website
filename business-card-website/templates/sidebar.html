@@ -1,0 +1,28 @@
+{% block sidebar %}
+<ul class="sidebar">
+    <li class="sidebar-item {% if selected_button == 'home' %}selected{% endif %}" style="--clr:#2483ff;">
+        <a href="{{ url_for('home') }}">
+            <img src="/static/home.png" alt="Home">
+            <span>HOME</span>
+        </a>
+    </li>
+    <li class="sidebar-item {% if selected_button == 'who_i_am' %}selected{% endif %}" style="--clr:#fff200;">
+        <a href="{{ url_for('who_i_am') }}">
+            <img src="/static/iam.png" alt="Who I Am">
+            <span>WHO I AM</span>
+        </a>
+    </li>
+    <li class="sidebar-item {% if selected_button == 'what_i_do' %}selected{% endif %}" style="--clr:#ff253f;">
+        <a href="{{ url_for('what_i_do') }}">
+            <img src="/static/computer.png" alt="What I Do">
+            <span>SKILLS</span>
+        </a>
+    </li>
+    <li class="sidebar-item {% if selected_button == 'contact' %}selected{% endif %}" style="--clr:#25d366;">
+        <a href="{{ url_for('contact') }}">
+            <img src="/static/contact.png" alt="Contact">
+            <span>CONTACT</span>
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% block whoiam %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('styles', filename='who.css') }}">
+<div class="window-console">
+  <div class="content">
+
+    <div class="main-content">
+      <h1>ABOUT ME:</h1>
+      <div class="image-container">
+        <img src="/static/smile.png" alt="image">
+      </div>
+
+        <li>Full Name: John Doe</li>
+        <li>Age: {{age}}</li> <!-- AGE ARG -->
+        <li>Based in: country</li>
+        <li>Hobbies: 1st, second </li>
+    </div>
+
+    <div class="main-content">
+        
+        <h3> Some description</h3>
+    </div>
+
+    <div class="sidebar-who"> <!--<p> elements animation -->
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+
+    <div class="bot-bar">
+        <h1>PROFESSIONAL INTERESTS: </h1>
+
+        <div class="interest">
+            <img src="/static/web-design.png" alt="Interest 1">
+            <h3>Web-Design</h3>
+        </div>
+        
+        <div class="interest">
+            <img src="/static/server.png" alt="Interest 2">
+            <h3>Backend</h3>
+        </div>
+
+        <div class="interest">
+            <img src="/static/qa.png" alt="Interest 2">
+            <h3>QA</h3>
+        </div>
+
+        <div class="interest">
+            <img src="/static/cloud-server.png" alt="Interest 2">
+            <h3>Cloud</h3>
+        </div>
+
+        <div class="interest">
+            <img src="/static/algorithms.png" alt="Interest 2">
+            <h3>Algorithms</h3>
+        </div>
+
+        <div class="interest">
+            <img src="/static/database.png" alt="Interest 2">
+            <h3>Big Data</h3>
+        </div>
+
+        <div class="interest">
+            <img src="/static/technical.png" alt="Interest 2">
+            <h3>Technical literature</h3>
+        </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

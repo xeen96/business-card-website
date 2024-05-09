@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap'); /* Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+/* Отступы, цвета и прочие стили */
+
+.window-console {
+    flex: 1;
+    background: linear-gradient(45deg, 
+        #000000 0, 
+        #110f0f 10%, 
+        #003f7d 20%, 
+        #000000 30%, 
+        #f91616 40%, 
+        #110f0f 50%, 
+        #002820 60%, 
+        #000f3f 70%, 
+        #580158 80%, 
+        #350080 90%, 
+        #ffffff 100%);
+    background-size: 500% 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slide 40s infinite;
+
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+.profile h1 {
+    color: #ffd43b;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 36px;
+    margin-bottom: 20px;
+    mix-blend-mode:color-dodge; 
+}
+
+.profile h2 {
+    color: #ffd43b;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 26px;
+    font-style: italic;
+    mix-blend-mode:color-dodge;  
+}
+.profile p {
+    font-family: 'Inconsolata', monospace; 
+    font-size: 16px;
+    color: #ffd43b; 
+    margin-top: 10px;
+    mix-blend-mode:difference 
+    
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    mix-blend-mode: difference;
+  }
+  
+  .social-button {
+    font-family: 'Inconsolata', monospace; 
+    background-color: #f91616;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    color: whitesmoke;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-weight: 600;
+  }
+  
+  .social-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+  
+  .social-button:hover {
+    background-color: #7200eb;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .social-button:hover::before {
+    transform: translateX(0);
+  }
+a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: white; 
+    text-rendering: geometricPrecision;
+    text-shadow: #1b1b1b;
+}
+
+  :root {
+    --glow-hue: 222deg;
+    --shadow-hue: 180deg;
+    --spring-easing: linear(
+    0, 0.002, 0.01 0.9%, 0.038 1.8%, 0.156, 0.312 5.8%, 0.789 11.1%, 1.015 14.2%,
+    1.096, 1.157, 1.199, 1.224 20.3%, 1.231, 1.231, 1.226, 1.214 24.6%,
+    1.176 26.9%, 1.057 32.6%, 1.007 35.5%, 0.984, 0.968, 0.956, 0.949 42%,
+    0.946 44.1%, 0.95 46.5%, 0.998 57.2%, 1.007, 1.011 63.3%, 1.012 68.3%,
+    0.998 84%, 1
+  );
+    --spring-duration: 1.33s;
+}
+@property --shimmer {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 33deg;
+}
+
+@keyframes shimmer {
+    0% {
+        --shimmer: 0deg;
+    }
+    100% {
+        --shimmer: 360deg;
+    }
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes text {
+    0% {
+        background-position: 100% center;
+    }    
+    100% {
+        background-position: -100% center;
+    }    
+}
+
+button {
+    color: var(--bg);
+    font-size: 20px;
+    font-weight: 600;
+    /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
+    background-image: linear-gradient(
+        315deg,
+        #ffc4ec -10%,
+        #efdbfd 50%,
+        #ffedd6 110%
+    );
+    padding: .8em 1.4em;
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
+    border-radius: 0.66em;
+    scale: 1;
+    transition: all var(--spring-duration) var(--spring-easing);
+    margin: 20px;
+}
+
+button:hover:not(:active),
+button.active {
+    transition-duration: calc(var(--spring-duration)*0.5);
+    scale: 1.2;
+    box-shadow: 0 4px 8px -2px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 0 0 transparent;
+}
+button:active {
+    scale: 1.1;
+    transition-duration: calc(var(--spring-duration)*0.5);
+}
+
+.shimmer {
+    position: absolute;
+    inset: -40px;
+    border-radius: inherit;
+    mask-image: conic-gradient(
+        from var(--shimmer, 0deg),
+        transparent 0%,
+        transparent 10%,
+        black 36%,
+        black 45%,
+        transparent 50%,
+        transparent 60%,
+        black 85%,
+        black 95%,
+        transparent 100%
+    );
+    mask-size: cover;
+    mix-blend-mode: plus-lighter;
+    animation: shimmer 1s linear infinite both;
+}
+button:hover .shimmer::before,
+button:hover .shimmer::after,
+button.active .shimmer::before,
+button.active .shimmer::after {
+    opacity: 1;
+    animation: shine 1.2s ease-in 1 forwards;
+}
+.shimmer::before,
+.shimmer::after {
+    transition: all 0.5s ease;
+    opacity: 0;
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    mix-blend-mode: color;
+    inset: 40px;
+    pointer-events: none;
+}
+.shimmer::before {
+    box-shadow: 0 0 3px 2px hsl(var(--glow-hue) 20% 95%),
+        0 0 7px 4px hsl(var(--glow-hue) 20% 80%),
+        0 0 13px 4px hsl(var(--glow-hue) 50% 70%),
+        0 0 25px 5px hsl(var(--glow-hue) 100% 70%);
+    z-index: -1;
+}
+
+.shimmer::after {
+    box-shadow: inset 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
+        inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%),
+        inset 0 0 5px 2px hsl(var(--glow-hue) 100% 70%);
+    z-index: 2;
+}
+
+button .text {
+    color: transparent;
+    background-clip: text;
+    background-color: var(--bg);
+    background-image: linear-gradient(120deg, transparent, hsla(var(--glow-hue),100%,80%,0.66) 40%, hsla(var(--glow-hue),100%,90%,.9) 50%, transparent 52%);
+    background-repeat: no-repeat;
+    background-size: 300% 300%;
+    background-position: center 200%;
+}
+
+button:hover .text,
+button.active .text {
+    animation: text .66s ease-in 1 both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
